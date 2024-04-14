@@ -1,0 +1,5 @@
+/* add css var text-normal in root */
+:root {
+  --text-color-primary: #202020;
+  --text-color-secondary: hsl(0, 0%, 40%);
+}
