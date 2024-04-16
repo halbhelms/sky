@@ -4,15 +4,15 @@
   export let data: LayoutData;
 
   import Accordion from '@sky/skyui';
-  import Drawer from '$lib/ui/compound/Drawer.svelte';
-  import DateRange from '$lib/ui/base/DateRange.svelte';
-  import Sidebar from '$lib/ui/compound/Sidebar.svelte';
-  import Groups from '$lib/ui/app/Groups.svelte';
-  import Views from '$lib/ui/app/Views.svelte';
-  import UserLabel from '$lib/ui/compound/UserLabel.svelte';
+  import Drawer from '@sky/skyui';
+  import DateRange from '@sky/skyui';
+  import Sidebar from '@sky/skyui';
+  import Groups from '@sky/skyui';
+  import Views from '@sky/skyui';
+  import UserLabel from '@sky/skyui';
 
 
-  $: views = data.props.views || [];
+  $: views = data.views || [];
   $: groups = data.props.groups || [];
   $: sidebarItems = data.props.sidebarItems || [];
   $: name = data.props.userInfo.name;
