@@ -30,6 +30,7 @@
 <!-- #region HTML -->
 <ContextMenu {actions} id={5} />
 <Radio label="Radio 1" name="my-radio" value="hi" action={radioAction} />
+<ExpCheckbox label="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
 <Checkbox title="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
 
 <!-- <section>
