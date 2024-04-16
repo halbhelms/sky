@@ -24,7 +24,6 @@
         label.style.color = 'black';
       }
     });
-  
   }
 </script>
 
