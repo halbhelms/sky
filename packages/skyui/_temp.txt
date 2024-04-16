@@ -1,0 +1,38 @@
+ const infoTableColumns = [
+    { title: "Group No.", align: "left", type: "text" },
+    { title: "Name", align: "left", type: "text" },
+    { title: "Sales", align: "right", type: "currency" },
+    { title: "Percent", align: "right", type: "number" },
+    { title: "Weekly Sales", align: "right", type: "currency" },
+  ];
+
+  const infoTableData = [
+    { groupNo: 102, name: "Top Producers", sales: 115000, percent: 43.6, weekly:1502 },
+    { groupNo: 103, name: "North", sales: 230000, percent: 9.6, weekly:2209 },
+    { groupNo: 104, name: "North East", sales: 1460000, percent: 9.6, weekly:1644 },
+    { groupNo: 105, name: "South", sales: 320000, percent: 9.6, weekly:3102 },
+    { groupNo: 106, name: "East", sales: 450000, percent: 9.6, weekly:3874 },
+    { groupNo: 107, name: "West", sales: 230000, percent: 9.6, weekly:1601 },
+    { groupNo: 108, name: "Pennsylvania", sales: 560000, percent: 9.6, weekly:2125 },
+    { groupNo: 109, name: "Ohio", sales: 230000, percent: 9.6, weekly:954 },
+    { groupNo: 110, name: "Texas-Oklahoma", sales: 320000, percent: 9.6, weekly:1144 },
+  ]
+  
+ action: [
+  {label: 'Edit', fnc: {myFunc}, icon: 'myIcon'}
+ ]
+
+   const groups = [
+    {id: 100, name: 'Top Producers', locations: [100, 101, 102, 104, 107, 110]},
+    {id: 200, name: 'North', locations: [100, 101, 102]},
+    {id: 300, name: 'North East', locations: [104, 107, 110]},
+    {id: 400, name: 'South', locations: [104, 107, 110]},
+    {id: 500, name: 'East', locations: [104, 107, 100, 101, 102, 110]},
+    {id: 600, name: 'West', locations: [104, 107, 103, 101, 102, 109]},
+    {id: 700, name: 'Pennsylvania', locations: [100]},
+    {id: 800, name: 'Ohio', locations: [101, 107]},
+    {id: 900, name: 'Texas-Oklahoma', locations: [102, 103, 109]}
+  ]
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->

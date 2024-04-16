@@ -1,9 +1,13 @@
-import TextInput from './components/ui/base/form/text-input.svelte'
+import TextInput from './components/form/text-input.svelte'
 import { HSLColor } from './types/hsl-color.js'
-import PageTitle from './components/ui/compound/page-title.svelte'
+import PageTitle from './components/ui/page-title.svelte'
+import Accordion from './components/ui/accordion.svelte'
+import InfoCard from './components/ui/info-card.svelte'
 
 export {
   TextInput,
   HSLColor,
-  PageTitle
+  PageTitle,
+  Accordion,
+  InfoCard,
 }

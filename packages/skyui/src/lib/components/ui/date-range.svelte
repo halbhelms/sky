@@ -1,0 +1,52 @@
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+
+<!-- #region: TS -->
+<script lang="ts">
+
+</script>
+<!-- #endregion -->
+
+
+<!-- #region: HTML -->
+<section>
+  <label><input type="radio" name="date-range" value="last-7"> Last 7 days</label>
+  
+  <label><input type="radio" name="date-range" value="this-month"> This month</label>
+  
+  <label><input type="radio" name="date-range" value="last-month"> Last month</label>
+  
+  <label><input type="radio" name="date-range" value="current-qtd"> Current QTD</label>
+  
+  <label><input type="radio" name="date-range" value="last-qtd"> Last QTD</label>
+  
+  <label><input type="radio" name="date-range" value="ytd"> YTD</label>
+</section>
+<!-- #endregion -->
+
+
+<!-- #region: CSS -->
+<style>
+  section {
+    display: grid;
+    row-gap: 0.75rem;
+    font-size: 0.75rem;
+    grid-auto-rows: 1rem;
+    padding: 1rem;
+    background-color: #E6EAEC;
+    color: #202020;
+  }
+
+  label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+
+  input{
+    margin-right: 0.5rem;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+</style>
+<!-- #endregion -->
