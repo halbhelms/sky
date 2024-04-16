@@ -5,6 +5,7 @@
   import Checkbox from '$lib/components/ui/checkbox.svelte';
   import ExpCheckbox from '$lib/components/ui/checkbox-fancy.svelte';
   import Radio from '$lib/components/ui/radio-fancy.svelte';
+  import Button from '$lib/components/ui/button.svelte';
   // export let data: PageData;
   // const { title } = data;
 
@@ -32,6 +33,7 @@
 <Radio label="Radio 1" name="my-radio" value="hi" action={radioAction} />
 <ExpCheckbox label="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
 <Checkbox title="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
+<Button text="Click Me" action={() => console.log('Button clicked')} />
 
 <!-- <section>
   <h1 class="page-title">{title}</h1>
