@@ -3,7 +3,8 @@
   // import type { PageData } from "./$types.js";
   import ContextMenu from '$lib/components/ui/context-menu.svelte';
   import Checkbox from '$lib/components/ui/checkbox.svelte';
-  import ExpCheckbox from '$lib/components/ui/exp-checkbox.svelte';
+  import ExpCheckbox from '$lib/components/ui/checkbox-fancy.svelte';
+  import Radio from '$lib/components/ui/radio-fancy.svelte';
   // export let data: PageData;
   // const { title } = data;
 
@@ -24,7 +25,7 @@
 
 <!-- #region HTML -->
 <ContextMenu {actions} id={5} />
-<ExpCheckbox label="ExpCheckbox 1" />
+<Radio label="Radio 1" name="my-radio" value="hi" action={(name, value)=> console.log(name, value)} />
 <Checkbox title="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
 
 <!-- <section>
