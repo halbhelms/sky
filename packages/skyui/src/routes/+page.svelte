@@ -20,12 +20,16 @@
     {label: 'Edit', fnc: edit, icon: 'plus-circle'},
     {label: 'Archive', fnc: archive, icon: 'pencil'}
   ];
+
+  function radioAction(name: string, value: string) {
+    console.log(name, value);
+  }
 </script>
 <!-- #endregion -->
 
 <!-- #region HTML -->
 <ContextMenu {actions} id={5} />
-<Radio label="Radio 1" name="my-radio" value="hi" action={(name, value)=> console.log(name, value)} />
+<Radio label="Radio 1" name="my-radio" value="hi" action={radioAction} />
 <Checkbox title="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
 
 <!-- <section>

@@ -1,25 +1,47 @@
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+
 <!-- #region: TS -->
 <script lang="ts">
   export let label: string
   export let name: string
   export let value: string
+  export let checked: boolean = false
   export let action: Function
 </script>
 <!-- #endregion -->
 
-
 <!-- #region: HTML -->
 <label class="radio-wrapper">
-  <input type="radio" {name} {value} on:change={() => action(name, value)}/>
+  <input
+    type="radio"
+    {name}
+    {value}
+    {checked}
+    on:change={() => action(name, value)}
+  />
   <span class="radio-mark"></span>
   {label}
 </label>
 
+<label class="radio-wrapper">
+  <input
+    type="radio"
+    {name}
+    {value}
+    {checked}
+    on:change={() => action(name, value)}
+  />
+  <span class="radio-mark"></span>
+  {label}
+</label>
+<!-- #endregion -->
 
+<!-- #endregion -->
 
-
+<!-- #region: STYLE -->
 <style>
-   .radio-wrapper {
+  .radio-wrapper {
     position: relative;
     display: block;
     cursor: pointer;
@@ -53,7 +75,7 @@
   }
 
   .radio-wrapper input:checked ~ .radio-mark {
-    background-color: #2196F3;
+    background-color: #2196f3;
   }
 
   .radio-mark:after {
