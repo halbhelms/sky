@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Hst } from '@histoire/plugin-svelte';
-  import Meow from '$lib/components/meow.svelte';
+  import Meow from '$lib/components/meow.svelte.txt';
   export let Hst: Hst;
   let name = 'Cody';
   let color = 'black';
