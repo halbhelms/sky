@@ -6,6 +6,7 @@
   import ExpCheckbox from '$lib/components/ui/checkbox-fancy.svelte';
   import Radio from '$lib/components/ui/radio-fancy.svelte';
   import Button from '$lib/components/ui/button.svelte';
+  import UserLabel from '$lib/components/ui/user-label.svelte';
   // export let data: PageData;
   // const { title } = data;
 
@@ -29,6 +30,7 @@
 <!-- #endregion -->
 
 <!-- #region HTML -->
+<UserLabel name="John Doe" title="Software Engineer" />
 <ContextMenu {actions} id={5} />
 <Radio label="Radio 1" name="my-radio" value="hi" action={radioAction} />
 <ExpCheckbox label="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
