@@ -39,7 +39,7 @@
   <tbody>
     {#each rows as row, i}
     {@const trAlign = columns[i].align}
-    <tr style="text-align: {trAlign}" class="{(i % 2 !== 0) && zebraStriping ? 'odd' : 'even'}">
+    <tr style="text-align: {trAlign}">
       {#each Object.entries(row) as [key, value], j}
         {@const tdAlign = columns[j].align}
         {@const tdType = columns[j].type}

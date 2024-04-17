@@ -17,8 +17,6 @@
 
 <!-- #region CSS -->
 <style>
-  .filename-component {
-  }
 
   h1 {
     color: hsl(225,96%,64%);

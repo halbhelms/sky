@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let label: string
-  export let value: string
-  export let name: string
-  export let action: Function
-  export let checked: boolean = false
+  export let label: string;
+  // export let value: string;
+  // export let name: string;
+  // export let action: Function;
+  // export let checked: boolean = false;
 
   let selected = false; // Assuming a boolean, adjust as needed
 </script>
@@ -14,7 +14,8 @@
   {label}
 </label>
 
-<style>.checkbox-wrapper {
+<style>
+  .checkbox-wrapper {
     position: relative;
     display: block;
     cursor: pointer;
@@ -48,7 +49,7 @@
   }
 
   .checkbox-wrapper input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: #2196f3;
   }
 
   .checkmark:after {
@@ -70,5 +71,4 @@
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
   }
-
 </style>

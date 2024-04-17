@@ -28,7 +28,7 @@
 <section class="sidebar-component">
 {#each sidebarItems as item, index}
   <a href={item.path} class="sidebar-item" class:active={item.active}  on:click = {() => handleClick(index)}>
-    <i class={`bi-${item.icon}`}></i> {item.label}
+    <i class={"bi-{item.icon}"}></i> {item.label}
   </a>
 {/each}
 </section>

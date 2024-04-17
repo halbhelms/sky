@@ -2,22 +2,9 @@
 <script lang="ts">
   import type { LayoutData } from "./$types";
   export let data: LayoutData;
-
-  import Accordion from '@sky/skyui';
-  import Drawer from '@sky/skyui';
-  import DateRange from '@sky/skyui';
-  import Sidebar from '@sky/skyui';
-  import Groups from '@sky/skyui';
-  import Views from '@sky/skyui';
-  import UserLabel from '@sky/skyui';
-
-
-  $: views = data.views || [];
-  $: groups = data.props.groups || [];
-  $: sidebarItems = data.props.sidebarItems || [];
-  $: name = data.props.userInfo.name;
-  $: title = data.props.userInfo.title;
-</script>
+  const { sidebarItems } = data
+  // import { Accordion, Drawer, DateRange, Sidebar, Groups, Views, UserLabel } from '@sky/skyui';
+  </script>
 <!-- #endregion -->
 
 
@@ -26,8 +13,8 @@
 <!-- #region HTML -->
 <section class="layout">
   <aside>
-    <UserLabel {name} {title} />
-  <Sidebar {sidebarItems} />
+    <!-- <UserLabel {name} {title} />
+  <Sidebar {sidebarItems} /> -->
   </aside>
 
   <section class="main">
@@ -35,7 +22,7 @@
   </section>
 </section>
 
-<Drawer>
+<!-- <Drawer>
   <Accordion title="Date Range" icon="bi-calendar-range">
     <DateRange />
   </Accordion>
@@ -45,7 +32,7 @@
   <Accordion title="Views" icon="bi-window-fullscreen">
     <Views {views} />
   </Accordion>
-</Drawer>
+</Drawer> -->
 <!-- #endregion -->
 
 
