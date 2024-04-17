@@ -7,6 +7,7 @@ import Drawer from './components/ui/drawer.svelte'
 import Groups from './components/ui/groups.svelte'
 import Heading from './components/ui/heading.svelte'
 import InfoCard from './components/ui/info-card.svelte'
+import { HSLColor } from './types/hsl-color.js'
 import PageTitle from './components/ui/page-title.svelte'
 import Radio from './components/ui/radio-fancy.svelte'
 import SectionTitle from './components/ui/section-title.svelte'
@@ -24,6 +25,7 @@ export {
   Drawer,
   Groups,
   Heading,
+  HSLColor,
   InfoCard,
   PageTitle,
   Radio,
@@ -31,5 +33,5 @@ export {
   Sidebar,
   SVGIcon,
   Table,
-  TextInput
+  TextInput,
 }

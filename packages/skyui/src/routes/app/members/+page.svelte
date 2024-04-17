@@ -5,7 +5,7 @@
 <script lang="ts">
   import PageTitle from '$lib/components/ui/page-title.svelte';
   import Drawer from '$lib/components/ui/drawer.svelte';
-  import MemberForm from '$lib/components/member-form.svelte';
+  import MemberForm from '$lib/components/member-form.txt';
   export let data
   const member = data.member || null
   

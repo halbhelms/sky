@@ -3,7 +3,7 @@
 
 <!-- #region: TS -->
 <script lang="ts">
-  import type { Group } from '$lib/types/groups.ts';
+  import type { Group } from '$lib/types/group.ts';
   export let groups: Group[]
 </script>
 <!-- #endregion -->
