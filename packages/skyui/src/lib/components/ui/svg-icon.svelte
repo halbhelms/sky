@@ -4,8 +4,8 @@
 <!-- #region TS -->
 <script lang="ts">
   export let iconName: string
-  export let width: string = '32'
-  export let height: string = '32'
+  export let width: string
+  export let height: string
   export let fill: string = '#202020'
 </script>
 <!-- #endregion -->
@@ -13,7 +13,7 @@
 
 <!-- #region HTML -->
 <section class="svg-icon-component">
-<svg class="bi" width={width} height={height} fill={fill}>
+<svg class="bi" {width} {height} {fill}>
   <use xlink:href="/node_modules/bootstrap-icons/bootstrap-icons.svg#{iconName}"/>
 </svg>
 </section>

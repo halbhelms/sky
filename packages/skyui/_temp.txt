@@ -36,3 +36,10 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+
+
+import { page } from '$app/stores';
+import type { PageData } from "./$types.js";
+export let data: PageData;
+const { title } = data;

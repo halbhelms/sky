@@ -3,31 +3,18 @@
 
 <!-- #region: TS -->
 <script lang="ts">
+  import { page } from '$app/stores';
   import type { SidebarItem } from '$lib/types/sidebar-item.ts';
   
   export let sidebarItems: SidebarItem[]
-  // loop over sidebar items with forEach, adding an active property and setting the first item to active
-  sidebarItems && sidebarItems.forEach(item => {
-    item.active = false;
-  });
-  sidebarItems && (sidebarItems[0].active = true);
-
-  function handleClick(index: number) {
-    // loop over all the sidebar items and set the color to the default
-    sidebarItems.forEach(item => {
-        item.active = false;
-    });
-    // set the active item to true
-    sidebarItems[index].active = true;
-  };
 </script>
 <!-- #endregion -->
 
 
 <!-- #region: HTML -->
 <section class="sidebar-component">
-{#each sidebarItems as item, index}
-  <a href={item.path} class="sidebar-item" class:active={item.active}  on:click = {() => handleClick(index)}>
+{#each sidebarItems as item}
+  <a href={item.path} class="sidebar-item" class:active={$page.url.pathname==item.path} >
     <i class={"bi-{item.icon}"}></i> {item.label}
   </a>
 {/each}
@@ -49,7 +36,7 @@
   }
 
   .active {
-    color: var(--sky-color);
+    color: hsl(218, 100%, 58%);
     font-weight: 600;
   }
 
@@ -67,7 +54,7 @@
   }
 
   .sidebar-item:hover {
-    color: var(--sky-color);
+    color: hsl(218, 100%, 58%);
     font-weight: 600;
     cursor: pointer;
   }

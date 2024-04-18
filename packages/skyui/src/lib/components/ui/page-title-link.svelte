@@ -1,27 +1,27 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 
 <!-- #region TS -->
 <script lang="ts">
   import SvgIcon from "./svg-icon.svelte";
 
-  export let title: string;
+  export let text: string;
+  export let action: Function;
 </script>
-
 <!-- #endregion -->
 
 
 <!-- #region HTML -->
-<section class="page-title-component">
-  <h1>{title}</h1>
+<section class="page-title-link-component">
+  <h1 on:click={() => action()}>{text}</h1>
 </section>
-
 <!-- #endregion -->
 
 
 <!-- #region CSS -->
 <style>
-  .page-title-component {
+  .page-title-link-component {
     font-size: 2rem;
     color: var(--text-color, #202020);
     margin: 1rem 2rem 1rem 1rem;
@@ -33,3 +33,4 @@
     padding: 1rem 0.5rem 1rem 0.5rem;
   }
 </style>
+<!-- #endregion -->

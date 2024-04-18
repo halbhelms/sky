@@ -15,6 +15,7 @@ import Sidebar from './components/ui/sidebar.svelte'
 import SVGIcon from './components/ui/svg-icon.svelte'
 import Table from './components/ui/table.svelte'
 import TextInput from './components/ui/text-input.svelte'
+import UserLabel from './components/ui/user-label.svelte'
 
 export {
   Accordion,
@@ -34,4 +35,5 @@ export {
   SVGIcon,
   Table,
   TextInput,
+  UserLabel,
 }

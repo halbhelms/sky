@@ -73,7 +73,8 @@
     top: 1rem;
     left: 1rem;
     width: 180px;
-    background-color: #f4f4f6;
+    z-index: 1;
+    background-color: var(--bg-color);
     border: 1px solid #ccc;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -81,6 +82,7 @@
   }
 
   #opener {
+    position: relative;
     cursor: pointer;
   }
 
