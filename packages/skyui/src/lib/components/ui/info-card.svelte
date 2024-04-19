@@ -31,8 +31,8 @@
       {monetary} <span>{formatLargeNumber(numberNow)}</span>
     </div>
 
-    <div class="right" style="color:{deltaColor}">
-      <div class="right-top"><i class={arrow}></i>{delta}%</div>
+    <div class="right {deltaColor}">
+      <div class="right-top {deltaColor}"><i class="{arrow}"></i>{delta}%</div>
       <div class="right-bottom">v. {comparedTo}</div>
     </div>
   </div>
@@ -59,15 +59,23 @@
   }
 
   .title {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.25rem;
+    font-weight: 600;
   }
 
   .numbers {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.75rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
+  }
+
+  .green {
+    color: green;
+  }
+
+  .red {
+    color: red;
   }
 
   .bottom {
@@ -88,7 +96,7 @@
   }
 
   .right-top {
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 500;
     padding-bottom: 0.5rem;
   }

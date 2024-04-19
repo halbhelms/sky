@@ -74,9 +74,8 @@
     left: 1rem;
     width: 180px;
     z-index: 1;
-    background-color: var(--bg-color);
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    background-color: var(--bg-color, #eee);
+    border: 1px solid #ccc;    border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 0.5rem;
   }

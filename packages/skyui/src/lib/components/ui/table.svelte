@@ -8,9 +8,9 @@
   
   import ContextMenu from './context-menu.svelte';
 
-  export let rows: Object[]
+  export let rows: Array<Object>
   export let columns: TableColumn[]
-  export let actions: ContextMenuAction[]
+  export let actions: ContextMenuAction[] = []
   export let zebraStriping: boolean = true
   
   function edit(rowId: string) {
@@ -28,8 +28,8 @@
 <table>
   <thead>
     <tr>
-      {#each columns as {title, align}}
-        <th style="text-align: {align};">{title}</th>
+      {#each columns as column}
+        <th style="text-align: align={column.align};">{column.title}</th>
       {/each}
       {#if actions}
         <th>Actions</th>
@@ -38,8 +38,9 @@
   </thead>
   <tbody>
     {#each rows as row, i}
-    {@const trAlign = columns[i].align}
-    <tr style="text-align: {trAlign}">
+    <!-- {@const trAlign = columns[i].align} -->
+    <!-- <tr style="text-align: {trAlign}"> -->
+    <tr>
       {#each Object.entries(row) as [key, value], j}
         {@const tdAlign = columns[j].align}
         {@const tdType = columns[j].type}
@@ -61,8 +62,8 @@
 <style>
   table {
     border-collapse: collapse;
-    width: calc(100% - 4rem);
-    margin: 1rem 2rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+    width: calc(100% - 2rem);
   }
 
   th {

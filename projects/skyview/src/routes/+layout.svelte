@@ -21,18 +21,6 @@
     <slot />
   </section>
 </section>
-
-<!-- <Drawer>
-  <Accordion title="Date Range" icon="bi-calendar-range">
-    <DateRange />
-  </Accordion>
-  <Accordion title="Groups" icon="bi-globe-americas">
-    <Groups {groups} />
-  </Accordion>
-  <Accordion title="Views" icon="bi-window-fullscreen">
-    <Views {views} />
-  </Accordion>
-</Drawer> -->
 <!-- #endregion -->
 
 

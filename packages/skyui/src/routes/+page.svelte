@@ -15,7 +15,34 @@
   import PageTitle from '$lib/components/ui/page-title.svelte';
   import PageTitleLink from '$lib/components/ui/page-title-link.svelte';
   import DrawerToggler from '$lib/components/ui/drawer-toggler.svelte';
+  import Table from '$lib/components/ui/table.svelte';
+  import Accordion from '$lib/components/ui/accordion.svelte';
+  import Filter from '$lib/components/ui/filter.svelte';
+  import InfoCard from '$lib/components/ui/info-card.svelte';
 
+  export let data: any
+  
+  const { rows, columns, snapshots } = data;
+  const { 
+    total_sales_now, 
+    total_sales_then, 
+    total_transactions_now, 
+    total_transactions_then, 
+    total_net_sales_now, 
+    total_net_sales_then, 
+    total_cash_sales_now, 
+    total_cash_sales_then, 
+    total_skyfi_ach_sales_now, 
+    total_skyfi_ach_sales_then, 
+    total_credit_sales_now, 
+    total_credit_sales_then, 
+    total_fees_now, 
+    total_fees_then, 
+    total_taxes_now, 
+    total_taxes_then
+  } = snapshots;
+
+  
   let drawerOpen: boolean = false;
 
   function edit(rowId: number) {
@@ -47,15 +74,31 @@
 
 <!-- #region HTML -->
 <Drawer isOpen={drawerOpen} {closeDrawer}>
-  <p>Drawer Content</p>
+  <Accordion title="Filters">
+    <Checkbox label="Show archived" name="show-archived" value="1" action={() => console.log('Checkbox 1')} />
+    <Checkbox label="Show active" name="show-active" value="1" action={() => console.log('Checkbox 1')} />
+  </Accordion>
 </Drawer>
 <PageTitle title="Sales" />
 <PageTitleLink text="Default"/>
 <DrawerToggler {openDrawer} {closeDrawer} />
-<ContextMenu {actions} id={5} --bg-color='#f4f4f6' />
-<Slide label="Show archived"/>
-<Radio label="Radio 1" name="my-radio" value="hi" action={radioAction} />
-<Checkbox label="Checkbox 1" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} />
+<div class="info-cards">
+  <InfoCard title="Total Sales" numberNow = {total_sales_now} numberThen = {total_sales_then} currency={true} comparedTo="last year"/>
+  <InfoCard title="Total Cash Sales" numberNow = {total_cash_sales_now} numberThen = {total_cash_sales_then} currency={true} comparedTo="last year"/>
+  <InfoCard title="Total Net Sales" numberNow = {total_net_sales_now} numberThen = {total_net_sales_then} currency={true} comparedTo="last year"/>
+  <InfoCard title="Total Transactions" numberNow = {total_transactions_now} numberThen = {total_transactions_then} currency={false} comparedTo="last year"/>
+  <InfoCard title="Total SkyFi ACH Sales" numberNow = {total_skyfi_ach_sales_now} numberThen = {total_skyfi_ach_sales_then} currency={true} comparedTo="last year"/>
+  <InfoCard title="Total Credit Sales" numberNow = {total_credit_sales_now} numberThen = {total_credit_sales_then} currency={true} comparedTo="last year"/>
+  <InfoCard title="Total Fees" numberNow = {total_fees_now} numberThen = {total_fees_then} currency={true} comparedTo="last year"/>
+  <InfoCard title="Total Taxes" numberNow = {total_taxes_now} numberThen = {total_taxes_then} currency={true} comparedTo="last year"/>
+</div>
+<!-- <Slide label="Show archived"/>
+<Radio label="Credit" name="my-radio" value="hi" action={radioAction} />
+<Radio label="Debit" name="my-radio" value="hi" action={radioAction} />
+<Radio label="ACH" name="my-radio" value="hi" action={radioAction} />
+<Checkbox label="Subscribe to newsletter" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} /> -->
+<Filter label="Filter data" actionOn={openDrawer} actionOff={closeDrawer} />
+<Table {rows} {columns} {actions}/>
 
 
 <!-- <section>
@@ -66,10 +109,11 @@
 
 <!-- #region CSS -->
 <style>
-  .page-title {
-    font-size: 1.5rem;
-    color: #202020;
-    margin-bottom: 1rem;
-  } 
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 0.5rem 1rem 1rem 1rem;
+  }
 </style>
-<!-- #endregion -->`;
+<!-- #endregion -->
