@@ -24,12 +24,12 @@
   .page-title-component {
     font-size: 2rem;
     color: var(--text-color, #202020);
-    margin: 1rem 2rem 1rem 1rem;
+    margin: 1rem 0 1rem 1rem;
     display: inline-block;
   }
 
   h1 {
     min-width: auto;
-    padding: 1rem 0.5rem 1rem 0.5rem;
+    padding: 1rem 0 1rem 0.5rem;
   }
 </style>

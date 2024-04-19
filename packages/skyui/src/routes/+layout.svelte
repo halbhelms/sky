@@ -33,13 +33,16 @@
 <style>
   .container {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 260px 1fr;
     gap: 0.5rem;
   }
 
   .sidebar {
     background-color: white;
+    min-height: 100vh;
+    min-height: 100dvh;
     color: #202020;
+    background-color:hsl(60, 0%, 98%);
   }
 
   .main {

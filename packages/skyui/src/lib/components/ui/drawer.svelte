@@ -1,32 +1,32 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 
-<script>
-  let isOpen = false; // Control the state of the drawer
-  $: icon = isOpen ? "bi-door-closed" : "bi-door-open";
-
-  // Function to toggle the drawer's state
-  function toggleDrawer() {
-    isOpen = !isOpen;
-  }
+<!-- #region: TS -->
+<script lang="ts">
+  export let isOpen:boolean = false; // Control the state of the drawer
+  export let closeDrawer: () => void;
 </script>
+<!-- #endregion -->
 
+
+<!-- #region: HTML -->
 <!-- Drawer structure -->
 <div class="drawer" class:open={isOpen}>
-  <div class="vertical" on:click={toggleDrawer}>
+  <div class="vertical">
   </div>
   <!-- Your drawer content here -->
   <main>
     <slot />
   </main>
 </div>
+<!-- #endregion -->
 
-<!-- Trigger button outside the drawer -->
 
+<!-- #region: CSS -->
 <style>
   .drawer {
     display: grid;
-    grid-template-columns: 1.5rem 1fr;
+    grid-template-columns: 0.75rem 1fr;
     height: 100vh;
     width: 0; 
     position: fixed;
@@ -51,16 +51,10 @@
     cursor: pointer;
   }
 
-  i {
-    margin: 1rem 0 1rem 0;
-    font-size: 1.25rem;
-    cursor: pointer;
-    font-weight: 600;
-  }
-
   main {
     background-color: #e6eaec;
     color: #202020;
     padding: 1rem 0.5rem 1rem 0.5rem;
   }
 </style>
+<!-- #endregion -->

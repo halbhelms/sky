@@ -23,21 +23,8 @@
   <span class="radio-mark"></span>
   {label}
 </label>
-
-<label class="radio-wrapper">
-  <input
-    type="radio"
-    {name}
-    {value}
-    {checked}
-    on:change={() => action(name, value)}
-  />
-  <span class="radio-mark"></span>
-  {label}
-</label>
 <!-- #endregion -->
 
-<!-- #endregion -->
 
 <!-- #region: STYLE -->
 <style>

@@ -5,6 +5,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import type { SidebarItem } from '$lib/types/sidebar-item.ts';
+  import SVGIcon from '$lib/components/ui/svg-icon.svelte';
   
   export let sidebarItems: SidebarItem[]
 </script>
@@ -14,8 +15,9 @@
 <!-- #region: HTML -->
 <section class="sidebar-component">
 {#each sidebarItems as item}
+  <span><SVGIcon iconName={item.icon} width='32' height='32' /></span>
   <a href={item.path} class="sidebar-item" class:active={$page.url.pathname==item.path} >
-    <i class={"bi-{item.icon}"}></i> {item.label}
+     {item.label}
   </a>
 {/each}
 </section>
@@ -27,12 +29,14 @@
   .sidebar-component {
     max-width: 100%;
     display: grid;
+    grid-template-columns: 30px 1fr;
     grid-auto-rows: 2rem;
-    gap: 0.5rem;
+    row-gap: 0.5rem;
     padding: 1rem;
     min-height: 100%;
-    background-color: white;
+    background-color: hsl(60, 0%, 98%);
     color: #202020;
+    border-right: 1px solid hsl(60, 0%, 90%);
   }
 
   .active {

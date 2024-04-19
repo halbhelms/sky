@@ -29,9 +29,10 @@
     padding-top: 2rem;
     padding-bottom: 1rem;
     margin-bottom: var(--margin-bottom-large);
-    border-bottom: 1px solid silver;
+    border-bottom: 1px solid hsl(60, 0%, 82%);
     max-width: 100%;
     padding-left: 1rem;
+    border-right: 1px solid hsl(60, 0%, 90%);
   }
   
   h4 {
