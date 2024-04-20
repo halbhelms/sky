@@ -7,12 +7,14 @@
   import type { ContextMenuAction } from '$lib/types/context-menu-action.ts'
   
   import ContextMenu from './context-menu.svelte';
-
-  export let rows: Array<Object>
-  export let columns: TableColumn[]
-  export let actions: ContextMenuAction[] = []
+  // interface Row {
+  //   [key: string]: string | number
+  // }
+  export let rows: Record<string, any>[]
+  export let columns: any
+  export let actions: ContextMenuAction[] | null = null
   export let zebraStriping: boolean = true
-  
+  let rowNames = columns.map( (column: Record<string, any>) => column.rowName)
   function edit(rowId: string) {
     console.log('edit ' + rowId)
   }
@@ -29,22 +31,24 @@
   <thead>
     <tr>
       {#each columns as column}
-        <th style="text-align: align={column.align};">{column.title}</th>
+        <th style="text-align:{column.align};">{column.title}</th>
       {/each}
       {#if actions}
         <th>Actions</th>
       {/if}
     </tr>
   </thead>
-  <tbody>
-    {#each rows as row, i}
+
+
+
     <!-- {@const trAlign = columns[i].align} -->
     <!-- <tr style="text-align: {trAlign}"> -->
-    <tr>
-      {#each Object.entries(row) as [key, value], j}
-        {@const tdAlign = columns[j].align}
-        {@const tdType = columns[j].type}
-        <td style="text-align: {tdAlign};" class={tdType}>{value.toLocaleString()}</td>
+      {#each rows as row}
+      <!-- {@const tdAlign = columns[j].align} -->
+      <!-- {@const tdType = columns[j].type} -->
+      <tr>
+      {#each rowNames as rowName}
+        <td>{row[rowName].toLocaleString()}</td>
       {/each}
       {#if actions}
         <td style="text-align: center">
@@ -53,7 +57,6 @@
       {/if}
     </tr>
     {/each}
-  </tbody>
 </table>
 <!-- #endregion -->
 

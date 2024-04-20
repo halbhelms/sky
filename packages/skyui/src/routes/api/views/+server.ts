@@ -1,8 +1,9 @@
 export async function GET() {
   const data = [
-    {id: 100, name: 'General Overview', description: 'General Overview of Sales', active: false},
-    {id: 200, name: 'Monthly Overview', description: 'Monthly Overview of Sales', active: false},
-    {id: 300, name: 'Quarterly Overview', description: 'Quarterly Overview of Sales', active: false}
+    {id: 100, name: 'Last 7 days', description: 'General Overview of Sales', dateRange: 'last-7-days', groupId: 100},
+    {id: 200, name: 'This Month', description: 'Quarterly Overview of Sales', dateRange: 'current-quarter', groupId: 300},
+    {id: 100, name: 'General Overview', description: 'General Overview of Sales', dateRange: 'YTD', groupId: 400},
+    
   ]   
   return new Response(JSON.stringify(data), {
     headers: {

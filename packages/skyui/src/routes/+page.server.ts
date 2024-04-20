@@ -10,7 +10,7 @@ const rows = [
     ];
 
   const columns = [
-    { title: "Account No.", align: "left", type: "text" },
+    { title: "Act No.", align: "left", type: "text" },
     { title: "Name", align: "left", type: "text" },
     { title: "Sales", align: "right", type: "currency" },
     { title: "Payment", align: "left", type: "text" },
