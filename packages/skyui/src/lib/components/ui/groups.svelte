@@ -4,6 +4,7 @@
 <!-- #region: TS -->
 <script lang="ts">
   import type { Group } from '$lib/types/group.ts';
+  import Radio from '$lib/components/ui/radio-fancy.svelte';
   export let groups: Group[]
 </script>
 <!-- #endregion -->
@@ -13,8 +14,9 @@
 <section class="groups">
   {#each groups as group}
     <div>
-      <input type="checkbox" name={group.id} value={group.id} id={`id-${group.id}`}>
-      <label for={`id-${group.id}`} class="title">{group.name}</label>
+      <!-- <input type="checkbox" name={group.id} value={group.id} id={`id-${group.id}`}>
+      <label for={`id-${group.id}`} class="title">{group.name}</label> -->
+      <Radio name='selected-group' value={group.id} label={group.name} action={() => console.log('radio')} />
     </div>
   {/each}
 </section>
@@ -29,7 +31,7 @@
     font-size: 0.75rem;
     grid-auto-rows: 1rem;
     padding: 1rem;
-    background-color: #E6EAEC;
+    background-color: hsl(0, 0%, 98%);
     color: #202020;
   }
 

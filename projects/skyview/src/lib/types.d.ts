@@ -3,3 +3,9 @@ export type Group = {
   name: string;
   locations: number[];
 }
+
+export type View = {
+  id: number;
+  name: string;
+  active: boolean = false;
+}

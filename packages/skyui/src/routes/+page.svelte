@@ -19,10 +19,13 @@
   import Accordion from '$lib/components/ui/accordion.svelte';
   import Filter from '$lib/components/ui/filter.svelte';
   import InfoCard from '$lib/components/ui/info-card.svelte';
+  import Groups from '$lib/components/ui/groups.svelte';
+  import DateRange from '$lib/components/ui/date-range.svelte';
+  import Views from '$lib/components/ui/views.svelte';
 
   export let data: any
   
-  const { rows, columns, snapshots } = data;
+  const { rows, columns, snapshots, groups, views } = data;
   const { 
     total_sales_now, 
     total_sales_then, 
@@ -74,9 +77,17 @@
 
 <!-- #region HTML -->
 <Drawer isOpen={drawerOpen} {closeDrawer}>
-  <Accordion title="Filters">
-    <Checkbox label="Show archived" name="show-archived" value="1" action={() => console.log('Checkbox 1')} />
-    <Checkbox label="Show active" name="show-active" value="1" action={() => console.log('Checkbox 1')} />
+  <Accordion title="Date Range">
+    <DateRange />
+  </Accordion>
+  <Accordion title="Groups">
+    <Groups {groups} />
+  </Accordion>
+  <div class="apply-button">
+    <Button text="Apply" action={() => console.log('button')} />
+  </div>
+  <Accordion title="Views">
+    <Views {views} />
   </Accordion>
 </Drawer>
 <PageTitle title="Sales" />
@@ -114,6 +125,11 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin: 0.5rem 1rem 1rem 1rem;
+  }
+
+  .apply-button {
+    display: flex;
+    justify-content: center;
   }
 </style>
 <!-- #endregion -->

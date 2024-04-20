@@ -23,9 +23,26 @@ export const load = (async ({ fetch }) => {
   if (snapshotsData.ok) {
     snapshots = await snapshotsData.json()
   } 
-    return {
+  
+  let groups = {}
+
+  const groupsData = await fetch('/api/groups')
+  if (groupsData.ok) {
+    groups = await groupsData.json()
+  } 
+  
+  let views = {}
+
+  const viewsData = await fetch('/api/views')
+  if (viewsData.ok) {
+    views = await viewsData.json()
+  } 
+  
+  return {
       rows,
       columns,
-      snapshots
+      snapshots,
+      groups,
+      views
     };
 })

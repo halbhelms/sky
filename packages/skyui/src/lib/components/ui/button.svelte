@@ -3,18 +3,16 @@
 
 <!-- #region: TS -->
 <script lang="ts">
-  export let text: string
+  export let text: string;
   export let action: Function;
 </script>
 <!-- #endregion -->
-
 
 <!-- #region: HTML -->
 <section class="button-component">
   <button on:click={() => action()}>{text}</button>
 </section>
 <!-- #endregion -->
-
 
 <!-- #region: CSS -->
 <style>
@@ -26,7 +24,11 @@
     border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     font-size: 16px; /* Larger text */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background and transform */
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    transition:
+      background-color 0.3s,
+      transform 0.2s; /* Smooth transition for background and transform */
   }
 
   button:hover {
@@ -38,3 +40,4 @@
     transform: scale(0.95); /* Slightly smaller when pressed */
   }
 </style>
+<!-- #endregion -->

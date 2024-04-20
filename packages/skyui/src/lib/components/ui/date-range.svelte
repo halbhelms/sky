@@ -3,24 +3,19 @@
 
 <!-- #region: TS -->
 <script lang="ts">
-
+  import Radio from '$lib/components/ui/radio-fancy.svelte';
 </script>
 <!-- #endregion -->
 
 
 <!-- #region: HTML -->
 <section>
-  <label><input type="radio" name="date-range" value="last-7"> Last 7 days</label>
-  
-  <label><input type="radio" name="date-range" value="this-month"> This month</label>
-  
-  <label><input type="radio" name="date-range" value="last-month"> Last month</label>
-  
-  <label><input type="radio" name="date-range" value="current-qtd"> Current QTD</label>
-  
-  <label><input type="radio" name="date-range" value="last-qtd"> Last QTD</label>
-  
-  <label><input type="radio" name="date-range" value="ytd"> YTD</label>
+  <Radio label="Last 7 days" value="last-7" name="selected-range" action={() => console.log('selected')}/>
+  <Radio label="This month" value="this-month" name="selected-range" action={() => console.log('selected')}/>
+  <Radio label="Last month" value="last-month" name="selected-range" action={() => console.log('selected')}/>
+  <Radio label="Current QTD" value="current-qtd" name="selected-range" action={() => console.log('selected')}/>
+  <Radio label="Previous QTD" value="previous-qtd" name="selected-range" action={() => console.log('selected')}/>
+  <Radio label="YTD" value="ytd" name="selected-range" action={() => console.log('selected')}/>
 </section>
 <!-- #endregion -->
 
@@ -33,7 +28,7 @@
     font-size: 0.75rem;
     grid-auto-rows: 1rem;
     padding: 1rem;
-    background-color: #E6EAEC;
+    background-color: hsl(0, 0%, 98%);
     color: #202020;
   }
 
@@ -41,6 +36,7 @@
     font-size: 1rem;
     font-weight: 500;
     margin-left: 1rem;
+    user-select: none;
   }
 
   input{

@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let label: string = 'Text Input'
-  export let name: string = 'name-value'
+  export let label: string
+  export let name: string
   export let width: string = '100%'
   export let placeholder: string = ''
 
