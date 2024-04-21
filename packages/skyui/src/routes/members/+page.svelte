@@ -17,7 +17,7 @@
 </script>
 
 <PageTitle title="Members" />
-<TextInput label="New Member Email" name="invitation-email" />
+<TextInput label="New Member Email" name="invitation-email" width="100" />
 <Button text="Invite" action={inviteMember}/>
 <table>
   <thead>
