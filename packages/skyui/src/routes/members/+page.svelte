@@ -30,11 +30,30 @@
   <tbody>
     {#each rows as row}
       <tr>
-        <td>{row.name}</td>
-        <td>{row.email}</td>
-        <td style="text-align:right">{row.status}</td>
+        <td class:suspended={row.status == 'suspended'} class:invited={row.status == 'invited'}>{row.name}</td>
+        <td class:suspended={row.status == 'suspended'} class:invited={row.status == 'invited'}>{row.email}</td>
+        <td class:suspended={row.status == 'suspended'} class:invited={row.status == 'invited'}>{row.status}</td>
       </tr>
     {/each} 
 </table>
+
+<style>
+  td {
+    padding-right: 1.5rem;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  .suspended {
+    color: silver;
+  }
+
+  .invited {
+    color: green;
+    font-style: italic;
+  }
+</style>
 
 
