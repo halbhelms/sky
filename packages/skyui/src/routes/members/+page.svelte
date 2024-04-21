@@ -4,7 +4,7 @@
   import PageTitle from "$lib/components/ui/page-title.svelte";
   import TextInput from "$lib/components/ui/text-input.svelte";
   import Button from "$lib/components/ui/button.svelte";
-  import Table from "$lib/components/ui/table.svelte";
+  import Slide from "$lib/components/ui/slide.svelte";
   
   export let data: any
   const { columns, rows } = data;
@@ -24,7 +24,7 @@
     <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Status</th>
+    <th>Active</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +32,8 @@
       <tr>
         <td class:suspended={row.status == 'suspended'} class:invited={row.status == 'invited'}>{row.name}</td>
         <td class:suspended={row.status == 'suspended'} class:invited={row.status == 'invited'}>{row.email}</td>
-        <td class:suspended={row.status == 'suspended'} class:invited={row.status == 'invited'}>{row.status}</td>
+        <td class:suspended={row.status == 'suspended'} class:invited={row.status == 'invited'}><Slide checked={row.status!=='suspended'} label="" /></td>
+        
       </tr>
     {/each} 
 </table>

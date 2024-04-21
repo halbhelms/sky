@@ -1,5 +1,6 @@
 <script lang="ts">
   export let label: string
+  export let checked: boolean = false
 
   function toggler(element: HTMLDivElement) {
     const handleClick = () => {
@@ -18,8 +19,8 @@
 </script>
 
 <div class="slide-component" use:toggler>
-  <div class="slide on" class:on={false}>
-    <div class="dot on" class:on={false}></div>
+  <div class="slide on" class:on={checked}>
+    <div class="dot on" class:on={checked}></div>
   </div>
   <span>{label}</span>
 </div>
