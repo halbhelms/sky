@@ -17,8 +17,10 @@
 </script>
 
 <PageTitle title="Members" />
-<TextInput label="New Member Email" name="invitation-email" width="100" />
-<Button text="Invite" action={inviteMember}/>
+<div class="flex">
+  <TextInput label="New Member Email" name="invitation-email" width="100" />
+  <Button text="Invite" action={inviteMember}/>
+</div>
 <table>
   <thead>
     <tr>
@@ -55,6 +57,12 @@
     color: green;
     font-style: italic;
   }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+  } 
 </style>
 
 

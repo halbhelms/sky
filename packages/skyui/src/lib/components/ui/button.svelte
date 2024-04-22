@@ -18,7 +18,7 @@
 <style>
   button {
     padding: 7px 20px;
-    background-color: hsl(218, 100%, 58%);
+    background-color: hsl(218, 97%, 57%);
     color: white; /* White text */
     border: none;
     border-radius: 5px; /* Rounded corners */

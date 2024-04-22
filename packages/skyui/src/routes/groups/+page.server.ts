@@ -6,7 +6,15 @@ export const load = (async ({ fetch }) => {
   if (groupsData.ok) {
     groups = await groupsData.json()
   } 
-    return {
-      groups
+
+  let locations = []
+  const locationsData = await fetch('/api/locations')
+  if (locationsData.ok) {
+    locations = await locationsData.json()
+  } 
+
+  return {
+      groups,
+      locations
     };
 })

@@ -48,7 +48,7 @@
     transition: background-color 0.3s ease; /* Smooth transition for background color */
   }
   .slide.on {
-    background-color: var(--bg-color, #2196f3);
+    background-color: var(--bg-color, hsl(218, 97%, 57%) ); /* Change background color when on */
   }
 
   .slide:hover {

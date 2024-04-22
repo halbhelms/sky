@@ -38,14 +38,14 @@
 
 <style>
   .input-text-component {
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
   } 
 
   .label {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     position: absolute;
     background-color: white;
-    top: -10px;
+    top: -14px;
     left: 12px;
     padding: 0 12px 0 12px;
     border: 2px solid hsl(218, 85%, 43%);
@@ -54,11 +54,12 @@
   }
 
   input {
-    height: 2rem;
+    /* height: 2rem; */
     width: 400px;
     border: 2px solid hsl(218, 85%, 43%);
     border-radius: 8px;
     padding: 0 12px 0 12px;
+    font-size: .85rem;
   }
 
   input::placeholder {
@@ -68,8 +69,8 @@
   
   .form-control {
     position: relative;
-    margin-bottom: 1rem;
-    min-height: 2rem;
+    /* margin-bottom: 1rem; */
+    /* min-height: 2rem; */
     min-width: 100%;
   }
 
