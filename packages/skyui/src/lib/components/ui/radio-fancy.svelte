@@ -5,7 +5,7 @@
 <script lang="ts">
   export let label: string
   export let name: string
-  export let value: string
+  export let value: string | number
   export let checked: boolean = false
   export let action: Function
 </script>

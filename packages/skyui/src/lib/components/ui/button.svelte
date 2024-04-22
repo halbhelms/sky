@@ -4,7 +4,7 @@
 <!-- #region: TS -->
 <script lang="ts">
   export let text: string;
-  export let action: Function;
+  export let action: Function = () => console.log('Button clicked');
 </script>
 <!-- #endregion -->
 
@@ -18,8 +18,8 @@
 <style>
   button {
     padding: 7px 20px;
-    background-color: hsl(218, 97%, 57%);
-    color: white; /* White text */
+    background-color: var(--bg-color, hsl(218, 97%, 57%));
+    color: var(--text-color, White);
     border: none;
     border-radius: 5px; /* Rounded corners */
     cursor: pointer;

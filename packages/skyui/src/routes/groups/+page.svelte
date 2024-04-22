@@ -5,14 +5,13 @@
   import PageTitle from '$lib/components/ui/page-title.svelte';
   
   type Group = {
-    id: string;
+    id: number;
     name: string;
-    description: string;
     locations: string[];
   };
 
   type Location = {
-    id: string;
+    id: number;
     name: string;
   };
   export let data: {
@@ -20,36 +19,56 @@
     groups: Group[];
   }
 
-  const { locations, groups } = data;
+  let selectedGroupId: number = 0;
+  $: locations = data.locations;
+  $: groups = [{ id: 0, name: '', description: '', locations: [] }, ...(data.groups || [])];
+  $: selectedGroup = groups.find(group => group.id === selectedGroupId) as Group;
   
+  function selectGroupHandler(groupId: number) {
+    selectedGroupId = groupId;
+  }
 </script>
 
 <section class="filename-component">
   <PageTitle title="Groups" />
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each data.groups as group}
+  <section class="main">
+    <table>
+      <thead>
         <tr>
-          <td>{group.name}</td>
-          <td>{group.description}</td>
+          <th>Name</th>
         </tr>
-      {/each}
-    </tbody>
-  </table>
-  <!-- <NewGroupForm  /> -->
+      </thead>
+      <tbody>
+        {#each data.groups as group}
+          <tr class:selected={group.id == selectedGroupId} class="group-item" on:click={() => selectGroupHandler(group.id)}>
+            <td>{group.name}</td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
+  
+    <NewGroupForm group={selectedGroup} locations={locations} action={selectGroupHandler} />
+  </section>
 </section>
 <style>
-  .flex {
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-    margin-top: 1rem;
+
+
+  .group-item {
+    cursor: pointer; 
+  }
+
+  .selected {
+    color: hsl(218, 97%, 57%);
+    font-weight: bold;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    column-gap: 1rem;
     margin-left: 1rem;
-  } 
+  }
+
+  th {
+    text-align: left;
+  }
 </style>

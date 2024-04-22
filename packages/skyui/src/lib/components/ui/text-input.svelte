@@ -3,6 +3,7 @@
   export let name: string
   export let width: string = '100%'
   export let placeholder: string = ''
+  export let value: string = ''
 
   import { HSLColor } from '$lib/types/hsl-color.js';
 
@@ -29,7 +30,7 @@
 
 <div class="input-text-component">
   <div class="form-control">
-    <input {style} type="text" name={name} {placeholder} use:highlightAction />
+    <input {style} type="text" name={name} {placeholder} use:highlightAction value={value} />
     <div class="label">{label}</div>
   </div>
 </div>
@@ -45,7 +46,7 @@
     font-size: 0.6rem;
     position: absolute;
     background-color: white;
-    top: -14px;
+    top: -16px;
     left: 12px;
     padding: 0 12px 0 12px;
     border: 2px solid hsl(218, 85%, 43%);
@@ -55,7 +56,7 @@
 
   input {
     /* height: 2rem; */
-    width: 400px;
+    width: 100%;
     border: 2px solid hsl(218, 85%, 43%);
     border-radius: 8px;
     padding: 0 12px 0 12px;

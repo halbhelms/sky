@@ -7,16 +7,16 @@ type Group = {
 export async function GET() {
   const data: Group[] =
     [
-      {id: 100, name: 'Top Producers', locations: [100, 101, 102, 104, 107, 110]},
-      {id: 200, name: 'North', locations: [100, 101, 102]},
-      {id: 300, name: 'North East', locations: [104, 107, 110]},
-      {id: 400, name: 'South', locations: [104, 107, 110]},
-      {id: 500, name: 'East', locations: [104, 107, 100, 101, 102, 110]},
-      {id: 600, name: 'West', locations: [104, 107, 103, 101, 102, 109]},
+      {id: 100, name: 'Top Producers', locations: [100, 200, 400, 600, 800, 900]},
+      {id: 200, name: 'North', locations: [100, 800, 1000]},
+      {id: 300, name: 'North East', locations: [200, 600, 900]},
+      {id: 400, name: 'South', locations: [100, 500, 800]},
+      {id: 500, name: 'East', locations: [400, 500, 900, 1000, 1100, 1200]},
+      {id: 600, name: 'West', locations: [200, 600, 700, 900, 1000]},
       {id: 700, name: 'Pennsylvania Plant', locations: [100]},
-      {id: 800, name: 'Ohio', locations: [101, 107]},
-      {id: 900, name: 'Texas-Oklahoma', locations: [102, 103, 109]},
-      {id: 1000, name: 'East Rutherford Plant', locations: [102]},
+      {id: 800, name: 'Ohio', locations: [300, 400]},
+      {id: 900, name: 'Texas-Oklahoma', locations: [500, 900, 1000]},
+      {id: 1000, name: 'East Rutherford Plant', locations: [200]},
 
     ]
         

@@ -6,43 +6,60 @@
   import TextInput from '$lib/components/ui/text-input.svelte';
   import Button from '$lib/components/ui/button.svelte';
   import Checkbox from '$lib/components/ui/checkbox-fancy.svelte'
+  
 
   type Group = {
-    id: string;
+    id: number;
     name: string;
-    description: string;
     locations: string[];
   };
   
   type Location = {
-    id: string;
+    id: number;
     name: string;
   };
   
-  export let data: {
-    locations: Location[];
-    groups: Group[];
+  export let group: Group;
+  export let locations: Location[];
+  export let action: Function;
+
+  function reset() {
+    action(0)
   }
-  const{ locations, groups } = data;
 </script>
 <!-- #endregion -->
 
 
 <!-- #region HTML -->
-<section class="filename-component">
-  <div class="flex">
-    <TextInput label="Name" name="new-group" />
-    <Button text="Create" action={() => console.log('new group form')} />
+<section class="new-group-form-component">
+  <TextInput label="Name" name="new-group" width="30ch" value={group.name}/>
+  <!-- locations for this group -->
+  <div class="group-locations">
+    {#each locations as location}
+    <Checkbox label={location.name} name='locations-selected' value={String(location.id)} checked={group.locations.some(element => String(element).includes(String(location.id)))} />
+    {/each}
   </div>
-
+  <div class="buttons">
+    <Button text="Reset" action={reset} --bg-color='silver' --text-color='black'/>
+    <Button text={group.id? 'Update' : 'Create'} action={() => console.log('new group form')} />
+  </div>
 </section>
 <!-- #endregion -->
 
 
 <!-- #region CSS -->
 <style>
-  .filename-component {
+  .group-locations {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
 
+  .buttons {
+
+    display: flex;
+    justify-content: start;
+    column-gap: 1rem;
+    margin-top: 1rem;
   }
 </style>
 <!-- #endregion -->
