@@ -15,7 +15,7 @@
   import PageTitle from '$lib/components/ui/page-title.svelte';
   import PageTitleLink from '$lib/components/ui/page-title-link.svelte';
   import DrawerToggler from '$lib/components/ui/drawer-toggler.svelte';
-  import Table from '$lib/components/ui/table.svelte';
+  // import Table from '$lib/components/ui/table.svelte';
   import Accordion from '$lib/components/ui/accordion.svelte';
   import Filter from '$lib/components/ui/filter.svelte';
   import InfoCard from '$lib/components/ui/info-card.svelte';
@@ -25,7 +25,7 @@
 
   export let data: any
   
-  const { rows, columns, snapshots, groups, views } = data;
+  const { rows, snapshots, groups, views } = data;
   const { 
     total_sales_now, 
     total_sales_then, 
@@ -103,13 +103,28 @@
   <InfoCard title="Total Fees" numberNow = {total_fees_now} numberThen = {total_fees_then} currency={true} comparedTo="last year"/>
   <InfoCard title="Total Taxes" numberNow = {total_taxes_now} numberThen = {total_taxes_then} currency={true} comparedTo="last year"/>
 </div>
-<!-- <Slide label="Show archived"/>
-<Radio label="Credit" name="my-radio" value="hi" action={radioAction} />
-<Radio label="Debit" name="my-radio" value="hi" action={radioAction} />
-<Radio label="ACH" name="my-radio" value="hi" action={radioAction} />
-<Checkbox label="Subscribe to newsletter" name="my-checkbox" value="1" action={() => console.log('Checkbox 1')} /> -->
+
 <Filter label="Filter data" actionOn={openDrawer} actionOff={closeDrawer} />
-<Table {rows} {columns} {actions}/>
+<table>
+  <thead>
+    <tr>
+      <th>Act. No</th>
+      <th>Name</th>
+      <th class="number">Sales</th>
+      <th>Payment</th>
+    </tr>
+  </thead>
+  <tbody>
+    {#each rows as row}
+      <tr>
+        <td>{row.accountNo}</td>
+        <td>{row.name}</td>
+        <td class="number">${row.sales.toLocaleString()}</td>
+        <td>{row.payment}</td>
+      </tr>
+    {/each}
+  </tbody>
+</table>
 
 
 <!-- <section>
@@ -130,6 +145,31 @@
   .apply-button {
     display: flex;
     justify-content: center;
+  }
+
+   table {
+    width: calc(100% - 2rem);
+    border-collapse: collapse;
+    margin: 0 1rem 0 1rem;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .number {
+    text-align: right;
+    padding-right: 1rem;
   }
 </style>
 <!-- #endregion -->
