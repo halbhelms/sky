@@ -17,8 +17,6 @@ export async function GET() {
     {id: 1500, date: '2024-02-27', location: 'Zion', type: 'Credit Card', gross: 1074.55},
     {id: 1600, date: '2024-02-27', location: 'Zion', type: 'Credit Card', gross: 802.11},
     {id: 1700, date: '2024-02-28', location: 'Uncanny Valley', type: 'Credit Card', gross: 984.64},
-    
-    
   ]   
   return new Response(JSON.stringify(data), {
     headers: {
