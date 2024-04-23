@@ -91,7 +91,7 @@
   </Accordion>
 </Drawer>
 <PageTitle title="Sales" />
-<PageTitleLink text="Default"/>
+<PageTitleLink text={views[0].name}/>
 <DrawerToggler {openDrawer} {closeDrawer} />
 <div class="info-cards">
   <InfoCard title="Total Sales" numberNow = {total_sales_now} numberThen = {total_sales_then} currency={true} comparedTo="last year"/>
