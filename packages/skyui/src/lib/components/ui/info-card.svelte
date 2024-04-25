@@ -59,12 +59,12 @@
   }
 
   .title {
-    font-size: 1.25rem;
+    font-size: clamp(1vw, 1.5vw, 2vw);
     font-weight: 600;
   }
 
   .numbers {
-    font-size: 1.75rem;
+    font-size: clamp(1.25vw, 2.5vw, 2.5vw);
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -96,7 +96,7 @@
   }
 
   .right-top {
-    font-size: 1.25rem;
+    font-size: clamp(1vw, 1.5vw, 2.5vw);
     font-weight: 500;
     padding-bottom: 0.5rem;
   }

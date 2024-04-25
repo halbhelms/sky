@@ -22,7 +22,7 @@
 <!-- #region CSS -->
 <style>
   .page-title-component {
-    font-size: 2rem;
+    font-size: var(--font-size, 2rem);
     color: var(--text-color, #202020);
     margin: 1rem 0 1rem 1rem;
     display: inline-block;

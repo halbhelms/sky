@@ -17,7 +17,6 @@ export async function GET() {
       {id: 800, name: 'Ohio', locations: [300, 400]},
       {id: 900, name: 'Texas-Oklahoma', locations: [500, 900, 1000]},
       {id: 1000, name: 'East Rutherford Plant', locations: [200]},
-
     ]
         
     return new Response(JSON.stringify(data), {

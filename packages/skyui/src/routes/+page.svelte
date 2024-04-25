@@ -22,6 +22,7 @@
   import Groups from '$lib/components/ui/groups.svelte';
   import DateRange from '$lib/components/ui/date-range.svelte';
   import Views from '$lib/components/ui/views.svelte';
+  import Waiting from '$lib/components/ui/waiting.svelte';
 
   export let data: any
   
@@ -45,7 +46,10 @@
     total_taxes_then
   } = snapshots;
 
-  
+  let dateRange: string = 'dtd';
+  let groupsSelected: number = 0;
+  let viewId = 300
+
   let drawerOpen: boolean = false;
 
   function edit(rowId: number) {
@@ -90,6 +94,7 @@
     <Views {views} />
   </Accordion>
 </Drawer>
+
 <PageTitle title="Sales" />
 <PageTitleLink text={views[0].name}/>
 <DrawerToggler {openDrawer} {closeDrawer} />
@@ -111,7 +116,6 @@
       <th>Act. No</th>
       <th>Name</th>
       <th class="number">Sales</th>
-      <th>Payment</th>
     </tr>
   </thead>
   <tbody>
@@ -120,7 +124,6 @@
         <td>{row.accountNo}</td>
         <td>{row.name}</td>
         <td class="number">${row.sales.toLocaleString()}</td>
-        <td>{row.payment}</td>
       </tr>
     {/each}
   </tbody>
