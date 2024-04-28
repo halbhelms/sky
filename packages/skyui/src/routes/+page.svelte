@@ -2,7 +2,6 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 
-<!-- #region TS --> 
 <script lang="ts">
   import Drawer from '$lib/components/ui/drawer.svelte';
   import ContextMenu from '$lib/components/ui/context-menu.svelte';
@@ -23,6 +22,8 @@
   import DateRange from '$lib/components/ui/date-range.svelte';
   import Views from '$lib/components/ui/views.svelte';
   import Waiting from '$lib/components/ui/waiting.svelte';
+  import LineChart from '$lib/components/ui/linear-chart.svelte';
+  import { goto, invalidate } from '$app/navigation';
 
   export let data: any
   
@@ -76,10 +77,23 @@
   function closeDrawer() {
     drawerOpen = false;
   }
-</script>
-<!-- #endregion -->
 
-<!-- #region HTML -->
+  async function drilldown(val: string) {
+    await goto(`?${val}`);
+    await invalidate(url => {
+      if (url.searchParams.has('viewId') ) {
+        return true
+      }
+      if (url.searchParams.has('groupId')) {
+        return true
+      }
+      return false
+    })
+  }
+</script>
+<div  on:click={() => drilldown('viewId=200&type=total-cash-sales')}>Click me</div>
+
+<div  on:click={() => drilldown('groupId=500&dateRange=ytd&type=ach-sales')}>Click me</div>
 <Drawer isOpen={drawerOpen} {closeDrawer}>
   <Accordion title="Date Range">
     <DateRange />
@@ -94,12 +108,12 @@
     <Views {views} />
   </Accordion>
 </Drawer>
-
+<LineChart />
 <PageTitle title="Sales" />
 <PageTitleLink text={views[0].name}/>
 <DrawerToggler {openDrawer} {closeDrawer} />
 <div class="info-cards">
-  <InfoCard title="Total Sales" numberNow = {total_sales_now} numberThen = {total_sales_then} currency={true} comparedTo="last year"/>
+  <InfoCard title="Total Sales" numberNow = {total_sales_now} numberThen = {total_sales_then} currency={true} comparedTo="last year" />
   <InfoCard title="Total Cash Sales" numberNow = {total_cash_sales_now} numberThen = {total_cash_sales_then} currency={true} comparedTo="last year"/>
   <InfoCard title="Total Net Sales" numberNow = {total_net_sales_now} numberThen = {total_net_sales_then} currency={true} comparedTo="last year"/>
   <InfoCard title="Total Transactions" numberNow = {total_transactions_now} numberThen = {total_transactions_then} currency={false} comparedTo="last year"/>
@@ -109,6 +123,10 @@
   <InfoCard title="Total Taxes" numberNow = {total_taxes_now} numberThen = {total_taxes_then} currency={true} comparedTo="last year"/>
 </div>
 
+<section class="chart">
+
+</section>
+  <h1 class="page-title">Sales Data</h1>
 <Filter label="Filter data" actionOn={openDrawer} actionOff={closeDrawer} />
 <table>
   <thead>
@@ -134,9 +152,8 @@
   <h1 class="page-title">{title}</h1>
 </section> -->
 
-<!-- #endregion -->
 
-<!-- #region CSS -->
+
 <style>
   .info-cards {
     display: grid;

@@ -10,10 +10,11 @@ export async function GET() {
       period: "weekly",
       total:10753,
       locations: [
-        {id: 100, name: "Barrington Concrete Plant", total: 2571, periodic: [350, 328, 411, 209, 265, 381, 322, 305]},
-        {id: 200, name: "Black Mountain Plant", total: 2769, periodic: [365, 391, 309, 334, 326, 374, 368, 302]},
-        {id: 300, name: "Weston Concrete Products", total:  2429, periodic: [254, 297, 322, 305, 341, 305, 310, 295]},
-        {id: 400, name: "Middle Rock Quarry", total: 2984, periodic: [350, 326, 312, 405, 411, 386, 395, 399]},
+        {id: 0, name: "All locations", periodic: [1319, 1342, 1354, 1253, 1343, 1446, 1395, 1301]},
+        {id: 100, name: "Barrington Concrete Plant", periodic: [350, 328, 411, 209, 265, 381, 322, 305]},
+        {id: 200, name: "Black Mountain Plant", periodic: [365, 391, 309, 334, 326, 374, 368, 302]},
+        {id: 300, name: "Weston Concrete Products", periodic: [254, 297, 322, 305, 341, 305, 310, 295]},
+        {id: 400, name: "Middle Rock Quarry", periodic: [350, 326, 312, 405, 411, 386, 395, 399]},
       ]
     }
   }

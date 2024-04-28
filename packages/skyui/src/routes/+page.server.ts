@@ -1,7 +1,20 @@
-// import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from './$types.ts';
 
-export const load = (async ({ fetch }) => {
-  let snapshots = {}
+export const load = (async ({ fetch, url }) => {
+  const viewId = url.searchParams.get('viewId') || '9999'
+
+  let apiString = '/api?viewId=9999&type=total-sales' 
+  if (viewId !== '9999') {
+    apiString = `/api/${url.search}`
+  }
+  console.log('apiString', apiString)
+ 
+  const groupData = await fetch(`/api/groups/`)
+    if (groupData.ok) {
+      return await groupData.json()
+    }
+  
+    let snapshots = {}
   const snapshotsData = await fetch('/api/snapshots')
   if (snapshotsData.ok) {
     snapshots = await snapshotsData.json()
@@ -31,4 +44,4 @@ export const load = (async ({ fetch }) => {
       groups,
       views
     };
-})
+}) as PageServerLoad;
