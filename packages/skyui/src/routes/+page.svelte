@@ -109,9 +109,9 @@
   </Accordion>
 </Drawer>
 <LineChart />
+<DrawerToggler {openDrawer} {closeDrawer} />
 <PageTitle title="Sales" />
 <PageTitleLink text={views[0].name}/>
-<DrawerToggler {openDrawer} {closeDrawer} />
 <div class="info-cards">
   <InfoCard title="Total Sales" numberNow = {total_sales_now} numberThen = {total_sales_then} currency={true} comparedTo="last year" />
   <InfoCard title="Total Cash Sales" numberNow = {total_cash_sales_now} numberThen = {total_cash_sales_then} currency={true} comparedTo="last year"/>
@@ -148,10 +148,6 @@
 </table>
 
 
-<!-- <section>
-  <h1 class="page-title">{title}</h1>
-</section> -->
-
 
 
 <style>
@@ -167,7 +163,7 @@
     justify-content: center;
   }
 
-   table {
+  table {
     width: calc(100% - 2rem);
     border-collapse: collapse;
     margin: 0 1rem 0 1rem;
@@ -192,4 +188,3 @@
     padding-right: 1rem;
   }
 </style>
-<!-- #endregion -->
